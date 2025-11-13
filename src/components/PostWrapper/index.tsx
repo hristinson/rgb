@@ -16,12 +16,11 @@ const PostWrapper = ({ id, title, body }: PostWrapperProps) => {
       <p className={styles.body}>{body}</p>
       <div className={styles.actions}></div>
       <button
-        className={styles.readMore}
         onClick={() => {
           router.push("/");
         }}
       >
-        Назад
+        <div className={styles.readMore}>Назад</div>
       </button>
     </div>
   );

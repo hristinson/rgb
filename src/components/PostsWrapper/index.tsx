@@ -13,8 +13,10 @@ const PostsWrapper = ({ id, title, body }: PostsWrapperProps) => {
     <div className={styles.postWrapper}>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.body}>{body.slice(0, 30) + "..."}</p>
-      <button className={styles.readMore}>
-        <Link href={`/post/${id}`}>Детальніше</Link>
+      <button>
+        <Link href={`/post/${id}`}>
+          <div className={styles.readMore}>Детальніше</div>
+        </Link>
       </button>
     </div>
   );
