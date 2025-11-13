@@ -1,10 +1,10 @@
 "use client";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { usePost } from "../../hooks/usePost";
 import Loader from "../../components/Loader";
+import PostWrapper from "../../components/PostWrapper";
 
 export default function PostPage() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
@@ -21,15 +21,7 @@ export default function PostPage() {
 
   return (
     <div>
-      <button
-        onClick={() => {
-          router.push("/");
-        }}
-      >
-        Back to Home
-      </button>
-      <h1>{data.title}</h1>
-      <p>{data.body}</p>
+      <PostWrapper title={data.title} body={data.body} id={data.id} />
     </div>
   );
 }

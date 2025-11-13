@@ -1,7 +1,8 @@
 "use client";
-import Link from "next/link";
+
 import { usePosts } from "../hooks/usePosts";
 import Loader from "../components/Loader";
+import PostsWrapper from "../components/PostsWrapper";
 
 export default function Home() {
   const { data, error, isLoading } = usePosts();
@@ -10,13 +11,18 @@ export default function Home() {
   }
   if (error instanceof Error) return <div>Error: {error.message}</div>;
 
+  type Post = { id: number; title: string; body: string };
+
   return (
-    <div>
-      <h1>Posts</h1>
+    <div className="root">
       <ul>
-        {data?.map((post: { id: number; title: string }) => (
+        {data?.map((post: Post) => (
           <li key={post.id}>
-            <Link href={`/post?id=${post.id}`}>{post.title}</Link>{" "}
+            <PostsWrapper
+              id={post.id}
+              title={post.title}
+              body={post.body}
+            ></PostsWrapper>
           </li>
         ))}
       </ul>
