@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { usePost } from "../../hooks/usePost";
 import Loader from "../../components/Loader";
@@ -21,7 +22,9 @@ export default function PostPage() {
 
   return (
     <div>
-      <PostWrapper title={data.title} body={data.body} id={data.id} />
+      <Suspense fallback={<Loader />}>
+        <PostWrapper title={data.title} body={data.body} id={data.id} />
+      </Suspense>
     </div>
   );
 }
