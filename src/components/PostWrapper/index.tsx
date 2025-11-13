@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import styles from "./index.module.css";
+import { Button } from "../ui/button";
 
 type PostWrapperProps = {
   id: number;
@@ -15,13 +16,13 @@ const PostWrapper = ({ id, title, body }: PostWrapperProps) => {
       <h1 className={styles.title}>{title}</h1>
       <p className={styles.body}>{body}</p>
       <div className={styles.actions}></div>
-      <button
+      <Button
         onClick={() => {
           router.push("/");
         }}
       >
-        <div className={styles.readMore}>Назад</div>
-      </button>
+        Назад
+      </Button>
     </div>
   );
 };

@@ -25,17 +25,3 @@
   color: #555;
   margin-bottom: 20px;
 }
-
-.readMore {
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.readMore:hover {
-  background-color: #2980b9;
-}
