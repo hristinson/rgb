@@ -17,6 +17,7 @@ const PostWrapper = ({ id, title, body }: PostWrapperProps) => {
       <p className={styles.body}>{body}</p>
       <div className={styles.actions}></div>
       <Button
+        variant={"outline"}
         onClick={() => {
           router.push("/");
         }}
