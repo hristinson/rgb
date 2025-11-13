@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import styles from "./index.module.css";
 
@@ -13,7 +14,7 @@ const PostsWrapper = ({ id, title, body }: PostsWrapperProps) => {
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.body}>{body.slice(0, 30) + "..."}</p>
       <button className={styles.readMore}>
-        <Link href={`/post?id=${id}`}>Детальніше</Link>
+        <Link href={`/post/${id}`}>Детальніше</Link>
       </button>
     </div>
   );
