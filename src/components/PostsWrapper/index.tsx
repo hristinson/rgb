@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import styles from "./index.module.css";
+import { Button } from "../ui/button";
 
 type PostsWrapperProps = {
   id: number;
@@ -13,11 +14,9 @@ const PostsWrapper = ({ id, title, body }: PostsWrapperProps) => {
     <div className={styles.postWrapper}>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.body}>{body.slice(0, 30) + "..."}</p>
-      <button>
-        <Link href={`/post/${id}`}>
-          <div className={styles.readMore}>Детальніше</div>
-        </Link>
-      </button>
+      <Button variant={"outline"}>
+        <Link href={`/post/${id}`}>Детальніше</Link>
+      </Button>
     </div>
   );
 };
